@@ -23,7 +23,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-
+import androidx.compose.ui.layout.ContentScale
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -79,16 +79,18 @@ fun BirthdayCardPreview() {
 fun GreetingImage(message: String, from: String, modifier: Modifier = Modifier) {
     val image = painterResource(R.drawable.androidparty)
     Box(modifier) {
-        Image(
-            painter = image,
-            contentDescription = null
+        Image(painter = image,
+            contentDescription = null,
+            modifier = Modifier.fillMaxSize(),
+            contentScale = ContentScale.Crop,
+            alpha = 0.5f
         )
         GreetingText(
             message = message,
             from = from,
             modifier = Modifier
-                .fillMaxSize() // Занимаем весь размер Box
-                .padding(8.dp) // Добавляем небольшой отступ от краев
+                .fillMaxSize()
+                .padding(8.dp)
         )
     }
 }
