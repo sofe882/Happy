@@ -31,9 +31,9 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     GreetingText(
-                        message = "Happy Birthday Sam!",
-                        from = "From Emma",
-                        modifier = Modifier.padding(8.dp) // Отступ от краев экрана
+                        message = "Happy Birthday Max!",
+                        from = "From Dmitry",
+                        modifier = Modifier.padding(8.dp)
                     )
                 }
             }
